@@ -1,9 +1,9 @@
 return {
-  {
-    "kylechui/nvim-surround",
-    version = "*",
-    event = "VeryLazy",
-    config = true,
-    opts = {},
-  },
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+		config = true,
+		opts = {},
+	},
 }
