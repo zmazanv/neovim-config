@@ -5,6 +5,7 @@ return {
 		config = true,
 		opts = {
 			options = {
+				icons_enabled = true,
 				theme = "onedark",
 			},
 		},
