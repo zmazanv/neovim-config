@@ -5,7 +5,7 @@ return {
 		config = true,
 		opts = {
 			options = {
-				theme = "dracula",
+				theme = "onedark",
 			},
 		},
 	},
