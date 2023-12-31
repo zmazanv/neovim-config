@@ -17,21 +17,33 @@ local servers = {
 }
 
 return {
-	{
-		"williamboman/mason.nvim",
-		lazy = false,
-		config = true,
-		opts = {},
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = true,
-		opts = {
-			ensure_installed = vim.tbl_keys(servers),
-		},
-	},
-	{
+	{ -- LSP configuration & plugins.
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			{ -- Automatically install LSPs to stdpath for Neovim.
+				"williamboman/mason.nvim",
+				lazy = false,
+				config = true,
+				opts = {},
+			},
+			{ -- Automatically install LSPs to stdpath for Neovim.
+				"williamboman/mason-lspconfig.nvim",
+				config = true,
+				opts = {
+					ensure_installed = vim.tbl_keys(servers),
+				},
+			},
+			{ -- Useful status updates for LSP.
+				"j-hui/fidget.nvim",
+				config = true,
+				opts = {},
+			},
+			{ -- Additional Lua configuration for development and Neovim environment.
+				"folke/neodev.nvim",
+				config = true,
+				opts = {},
+			},
+		},
 		lazy = false,
 		config = function()
 			-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
