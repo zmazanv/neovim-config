@@ -1,16 +1,15 @@
 return {
-	{
-		"hrsh7th/cmp-nvim-lsp",
-	},
-	{
-		"L3MON4D3/LuaSnip",
+	{ -- Autocompletion.
+		"hrsh7th/nvim-cmp",
 		dependencies = {
+			-- Snippet engine & associated nvim-cmp source.
+			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
+			-- LSP completion capabilities.
+			"hrsh7th/cmp-nvim-lsp",
+			-- Additional source of user-friendly snippets.
 			"rafamadriz/friendly-snippets",
 		},
-	},
-	{
-		"hrsh7th/nvim-cmp",
 		config = function()
 			-- Set up nvim-cmp.
 			local cmp = require("cmp")
