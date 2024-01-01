@@ -24,7 +24,7 @@ return {
 				vim.opt_local.relativenumber = true
 			end
 
-			vim.keymap.set("n", "<C-n>", toggle, {})
+			vim.keymap.set("n", "<C-n>", toggle, { desc = "Toggle Neotree" })
 		end,
 	},
 }

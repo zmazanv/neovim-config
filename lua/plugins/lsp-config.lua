@@ -60,12 +60,12 @@ return {
 				setup_server(server_name)
 			end
 
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<Leader>gd", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "<Leader>gr", vim.lsp.buf.references, {})
-			vim.keymap.set({ "n", "v" }, "<Leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show LSP hover documentation" })
+			vim.keymap.set("n", "<Leader>gd", vim.lsp.buf.definition, { desc = "Jump to symbol definition" })
+			vim.keymap.set("n", "<Leader>gr", vim.lsp.buf.references, { desc = "Show all symbol references" })
+			vim.keymap.set({ "n", "v" }, "<Leader>ca", vim.lsp.buf.code_action, { desc = "Show code actions" })
 		end,
 		opts = {},
 	},
