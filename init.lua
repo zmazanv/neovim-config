@@ -11,7 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local lazy = require('lazy')
+
 require('options.keymaps')
 require('options.options')
-require('lazy').setup('plugins')
+lazy.setup('plugins')
+vim.keymap.set('n', '<Leader>lh', function()
+  lazy.home()
+end, { desc = '[L]azy [H]ome' })
 --vim.cmd.colorscheme("onedark")
