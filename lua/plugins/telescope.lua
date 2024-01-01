@@ -51,8 +51,22 @@ return {
 			-- Enable telescope ui-select, if installed.
 			pcall(telescope.load_extension, "ui-select")
 
+			-- local function fuzzy_search()
+			-- 	builtin.current_buffer_fuzzy_find(themes.get_dropdown({ winblend = 10, previewer = false }))
+			-- end
+
 			vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Open file finder preview window" })
 			vim.keymap.set("n", "<Leader>fg", builtin.live_grep, { desc = "Open live grep preview window" })
+			vim.keymap.set("n", "<Leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
+			vim.keymap.set("n", "<Leader><Space>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+			vim.keymap.set("n", "<Leader>/", builtin.current_buffer_fuzzy_find, { desc = "[/] Fuzzily search in current buffer" })
+			vim.keymap.set("n", "<Leader>gf", builtin.git_files, { desc = "Search [G]it [F]iles" })
+			vim.keymap.set("n", "<Leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+			vim.keymap.set("n", "<Leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+			vim.keymap.set("n", "<Leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+			vim.keymap.set("n", "<Leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+			vim.keymap.set("n", "<Leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
+			vim.keymap.set("n", "<Leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 		end,
 		opts = {},
 	},
