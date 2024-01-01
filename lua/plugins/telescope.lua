@@ -11,10 +11,12 @@ return {
 					return vim.fn.executable("make") == 1
 				end,
 			},
+			"nvim-telescope/telescope-ui-select.nvim",
 		},
 		config = function()
 			local telescope = require("telescope")
 			local builtin = require("telescope.builtin")
+			local themes = require("telescope.themes")
 
 			telescope.setup({
 				defaults = {
@@ -25,25 +27,9 @@ return {
 						},
 					},
 				},
-			})
-			pcall(telescope.load_extension, 'fzf')
-
-			vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Open file finder preview window" })
-			vim.keymap.set("n", "<Leader>fg", builtin.live_grep, { desc = "Open live grep preview window" })
-		end,
-		opts = {},
-	},
-	{
-		"nvim-telescope/telescope-ui-select.nvim",
-		config = function()
-			-- This is your opts table
-			require("telescope").setup({
 				extensions = {
 					["ui-select"] = {
-						require("telescope.themes").get_dropdown({
-							-- even more opts
-						}),
-
+						themes.get_dropdown(),
 						-- pseudo code / specification for writing custom displays, like the one
 						-- for "codeactions"
 						-- specific_opts = {
@@ -60,9 +46,13 @@ return {
 					},
 				},
 			})
-			-- To get ui-select loaded and working with telescope, you need to call
-			-- load_extension, somewhere after setup function:
-			require("telescope").load_extension("ui-select")
+			-- Enable telescope fzf-native, if installed.
+			pcall(telescope.load_extension, "fzf")
+			-- Enable telescope ui-select, if installed.
+			pcall(telescope.load_extension, "ui-select")
+
+			vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Open file finder preview window" })
+			vim.keymap.set("n", "<Leader>fg", builtin.live_grep, { desc = "Open live grep preview window" })
 		end,
 		opts = {},
 	},
