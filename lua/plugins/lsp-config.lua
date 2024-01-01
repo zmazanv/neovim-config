@@ -173,6 +173,10 @@ return {
         vim.diagnostic.setloclist,
         { desc = 'Open diagnostics list' }
       )
+      vim.keymap.set('n', '<Leader>lm', function()
+        require('mason-registry').refresh(function() end)
+        require('mason.ui.instance').window.open()
+      end, { desc = '[L]azy [M]ason' })
     end,
     opts = {},
   },
