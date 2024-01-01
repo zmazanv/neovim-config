@@ -46,7 +46,7 @@ return {
 		},
 		lazy = false,
 		config = function()
-			-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+			-- The nvim-cmp supports LSP capabilities so you should advertise it to LSP servers.
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
@@ -59,6 +59,8 @@ return {
 			for server_name in pairs(servers) do
 				setup_server(server_name)
 			end
+
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<Leader>gd", vim.lsp.buf.definition, {})
