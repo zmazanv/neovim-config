@@ -50,6 +50,6 @@ return {
 			-- load_extension, somewhere after setup function:
 			require("telescope").load_extension("ui-select")
 		end,
+		opts = {},
 	},
-	opts = {},
 }
