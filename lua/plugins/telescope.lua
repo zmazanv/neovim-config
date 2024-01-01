@@ -15,6 +15,7 @@ return {
 		},
 		config = function()
 			local telescope = require("telescope")
+			local actions = require("telescope.actions")
 			local builtin = require("telescope.builtin")
 			local themes = require("telescope.themes")
 
@@ -24,6 +25,8 @@ return {
 						i = {
 							["<C-u>"] = false,
 							["<C-d>"] = false,
+							["<C-j>"] = actions.move_selection_next,
+							["<C-k>"] = actions.move_selection_previous,
 						},
 					},
 				},
@@ -59,7 +62,12 @@ return {
 			vim.keymap.set("n", "<Leader>fg", builtin.live_grep, { desc = "Open live grep preview window" })
 			vim.keymap.set("n", "<Leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
 			vim.keymap.set("n", "<Leader><Space>", builtin.buffers, { desc = "[ ] Find existing buffers" })
-			vim.keymap.set("n", "<Leader>/", builtin.current_buffer_fuzzy_find, { desc = "[/] Fuzzily search in current buffer" })
+			vim.keymap.set(
+				"n",
+				"<Leader>/",
+				builtin.current_buffer_fuzzy_find,
+				{ desc = "[/] Fuzzily search in current buffer" }
+			)
 			vim.keymap.set("n", "<Leader>gf", builtin.git_files, { desc = "Search [G]it [F]iles" })
 			vim.keymap.set("n", "<Leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 			vim.keymap.set("n", "<Leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
