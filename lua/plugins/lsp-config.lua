@@ -61,7 +61,7 @@ return {
       end
 
       vim.lsp.handlers['textDocument/hover'] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+          vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
       vim.keymap.set(
         'n',
@@ -86,6 +86,31 @@ return {
         '<Leader>ca',
         vim.lsp.buf.code_action,
         { desc = 'Show code actions' }
+      )
+
+      vim.keymap.set(
+        'n',
+        '[d',
+        vim.diagnostic.goto_prev,
+        { desc = 'Go to previous diagnostic message' }
+      )
+      vim.keymap.set(
+        'n',
+        ']d',
+        vim.diagnostic.goto_next,
+        { desc = 'Go to next diagnostic message' }
+      )
+      vim.keymap.set(
+        'n',
+        '<Leader>e',
+        vim.diagnostic.open_float,
+        { desc = 'Open floating diagnostic message' }
+      )
+      vim.keymap.set(
+        'n',
+        '<Leader>q',
+        vim.diagnostic.setloclist,
+        { desc = 'Open diagnostics list' }
       )
     end,
     opts = {},
