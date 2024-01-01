@@ -6,8 +6,8 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    config = function ()
-      local which_key = require("which-key")
+    config = function()
+      local which_key = require('which-key')
 
       which_key.register({
         ['<Leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
@@ -17,6 +17,8 @@ return {
         ['<Leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<Leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<Leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+
+        ['<Leader>l'] = { name = '[L]azy', _ = 'which_key_ignore' },
       })
     end,
     opts = {},
