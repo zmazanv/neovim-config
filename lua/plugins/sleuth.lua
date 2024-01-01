@@ -1,5 +1,5 @@
 return {
-	{ -- Detect tabstop and shiftwidth automatically heuristically.
-		"tpope/vim-sleuth",
-	},
+  { -- Detect tabstop and shiftwidth automatically heuristically.
+    'tpope/vim-sleuth',
+  },
 }
