@@ -1,13 +1,13 @@
 return {
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = true,
-		opts = {
-			options = {
-				icons_enabled = true,
-				theme = "onedark",
-			},
-		},
-	},
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = true,
+    opts = {
+      options = {
+        icons_enabled = true,
+        theme = 'onedark',
+      },
+    },
+  },
 }
