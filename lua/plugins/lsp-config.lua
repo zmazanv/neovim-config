@@ -49,6 +49,36 @@ return {
       -- The nvim-cmp supports LSP capabilities so you should advertise it to LSP servers.
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require('lspconfig')
+      local builtin = require("telescope.builtin")
+
+      -- This function gets run when an LSP connects to a particular buffer.
+      local on_attach = function(_, bufnr)
+        -- NOTE: Remember that Lua is a real programming language, and as such,
+        -- it is possible to define small helper and utility functions so you
+        -- don't have to repeat yourself many times.
+        --
+        -- In this case we create a function that lets us more easily define
+        -- mapping specific for LSP related items. It sets the mode, buffer,
+        -- and description for us each time.
+        local nmap = function(keys, func, desc)
+          if desc then
+            desc = 'LSP: ' .. desc
+          end
+
+          vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+        end
+
+        nmap('<Leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        nmap('<Leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+        nmap('gd', builtin.lsp_definitions, '[G]oto [D]efinition')
+        nmap('gr', builtin.lsp_references, '[G]oto [R]eferences')
+        nmap('gI', builtin.lsp_implementations, '[G]oto [I]mplenetation')
+        nmap('gI', builtin.lsp_implementations, '[G]oto [I]mplenetation')
+        nmap("<Leader>D", builtin.lsp_type_definitions, 'Type [D]efinition')
+        nmap("<Leader>ds", builtin.lsp_document_symbols, '[D]ocument [S]ymbols')
+        nmap("<Leader>ws", builtin.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+      end
 
       local function setup_server(server_name)
         if lspconfig[server_name] then
@@ -61,7 +91,7 @@ return {
       end
 
       vim.lsp.handlers['textDocument/hover'] =
-          vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+        vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
       vim.keymap.set(
         'n',
