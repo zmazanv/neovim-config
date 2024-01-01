@@ -7,6 +7,6 @@ return {
     'n',
     '<Leader>lg',
     ':LazyGit<CR>',
-    { desc = 'Open LazyGit window', silent = true }
+    { desc = '[L]azy[G]it', silent = true }
   ),
 }
