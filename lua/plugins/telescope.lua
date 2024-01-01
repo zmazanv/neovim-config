@@ -13,7 +13,21 @@ return {
 			},
 		},
 		config = function()
+			local telescope = require("telescope")
 			local builtin = require("telescope.builtin")
+
+			telescope.setup({
+				defaults = {
+					mappings = {
+						i = {
+							["<C-u>"] = false,
+							["<C-d>"] = false,
+						},
+					},
+				},
+			})
+			pcall(telescope.load_extension, 'fzf')
+
 			vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Open file finder preview window" })
 			vim.keymap.set("n", "<Leader>fg", builtin.live_grep, { desc = "Open live grep preview window" })
 		end,
