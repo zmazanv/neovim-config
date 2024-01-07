@@ -9,7 +9,7 @@ vim.keymap.set('', 'm', '`')
 vim.keymap.set(
   'n',
   '<Leader>h',
-  ':nohlsearch<CR>',
+  vim.cmd.nohlsearch,
   { desc = 'Clear highlighted', silent = true }
 )
 vim.keymap.set('n', '<Leader>/', '/\\c<Left><Left>')
@@ -39,7 +39,7 @@ vim.keymap.set(
 
 -- Highlight yanked text on yank.
 local highlight_group =
-  vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+    vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()
