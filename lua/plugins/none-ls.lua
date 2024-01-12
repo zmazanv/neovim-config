@@ -19,6 +19,17 @@ return {
           },
         }),
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.code_actions.statix,
+        null_ls.builtins.diagnostics.deadnix,
+        null_ls.builtins.diagnostics.statix,
+        null_ls.builtins.formatting.alejandra,
+        -- null_ls.builtins.formatting.nixfmt,
+        -- null_ls.builtins.formatting.nixpkgs_fmt,
+        null_ls.builtins.code_actions.shellcheck,
+        -- null_ls.builtins.diagnostics.shellcheck,
+        -- null_ls.builtins.formatting.beautysh,
+        null_ls.builtins.formatting.shfmt,
+        null_ls.builtins.diagnostics.dotenv_linter,
       },
     })
 
