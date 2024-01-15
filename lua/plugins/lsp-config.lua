@@ -1,6 +1,8 @@
 local servers = {
+  autotools_ls = {},
   bashls = {},
   clangd = {},
+  cmake = {},
   cssls = {},
   dockerls = {},
   emmet_language_server = {},
