@@ -1,6 +1,8 @@
 local servers = {
+  autotools_ls = {},
   bashls = {},
   clangd = {},
+  cmake = {},
   cssls = {},
   dockerls = {},
   emmet_language_server = {},
@@ -122,7 +124,7 @@ return {
       })
 
       vim.lsp.handlers['textDocument/hover'] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+          vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
       -- vim.keymap.set(
       --   'n',
