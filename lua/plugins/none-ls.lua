@@ -30,6 +30,7 @@ return {
         -- null_ls.builtins.formatting.beautysh,
         null_ls.builtins.formatting.shfmt.with({
           extra_args = {
+            '--case-indent',
             '--indent=4',
           },
         }),
