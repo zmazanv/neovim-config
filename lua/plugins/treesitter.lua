@@ -28,6 +28,7 @@ return {
           'gitignore',
           'go',
           'html',
+          'hyprlang',
           'json',
           'jsonc',
           'java',
