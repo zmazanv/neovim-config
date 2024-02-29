@@ -4,7 +4,6 @@ return {
     local null_ls = require('null-ls')
     null_ls.setup({
       sources = {
-        null_ls.builtins.diagnostics.eslint_d,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.stylua.with({
@@ -25,8 +24,6 @@ return {
         null_ls.builtins.formatting.alejandra,
         -- null_ls.builtins.formatting.nixfmt,
         -- null_ls.builtins.formatting.nixpkgs_fmt,
-        null_ls.builtins.code_actions.shellcheck,
-        -- null_ls.builtins.diagnostics.shellcheck,
         -- null_ls.builtins.formatting.beautysh,
         null_ls.builtins.formatting.shfmt.with({
           extra_args = {
