@@ -32,6 +32,7 @@ return {
             '--indent=4',
           },
         }),
+        null_ls.builtins.hover.printenv,
         null_ls.builtins.diagnostics.dotenv_linter,
         null_ls.builtins.diagnostics.checkmake,
         null_ls.builtins.formatting.cmake_format,
