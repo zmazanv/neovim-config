@@ -9,6 +9,7 @@ local servers = {
   eslint = {},
   gopls = {},
   html = {},
+  jdtls = {},
   jsonls = {},
   lua_ls = {},
   marksman = {},
