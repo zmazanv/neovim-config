@@ -1,12 +1,15 @@
 local servers = {
+  autotools_ls = {},
   bashls = {},
   clangd = {},
+  cmake = {},
   cssls = {},
   dockerls = {},
   emmet_language_server = {},
   eslint = {},
   gopls = {},
   html = {},
+  jdtls = {},
   jsonls = {},
   lua_ls = {},
   marksman = {},
@@ -14,6 +17,7 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
+  yamlls = {},
 }
 
 return {

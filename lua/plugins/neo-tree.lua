@@ -14,8 +14,17 @@ return {
         popup_border_style = 'rounded',
         enable_git_status = true,
         enable_diagnostics = true,
-        enable_normal_mode_for_inputs = true,
         sort_case_insensitive = false,
+        event_handlers = {
+          {
+            event = 'neo_tree_popup_input_ready',
+            -- @param input NuiInput
+            handler = function(input)
+              -- enter input popup with normal mode by default
+              vim.cmd('stopinsert')
+            end,
+          },
+        },
       })
 
       local function toggle()

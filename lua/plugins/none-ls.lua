@@ -4,7 +4,6 @@ return {
     local null_ls = require('null-ls')
     null_ls.setup({
       sources = {
-        null_ls.builtins.diagnostics.eslint_d,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.stylua.with({
@@ -19,6 +18,25 @@ return {
           },
         }),
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.code_actions.statix,
+        null_ls.builtins.diagnostics.todo_comments,
+        null_ls.builtins.diagnostics.deadnix,
+        null_ls.builtins.diagnostics.statix,
+        null_ls.builtins.formatting.alejandra,
+        -- null_ls.builtins.formatting.nixfmt,
+        -- null_ls.builtins.formatting.nixpkgs_fmt,
+        -- null_ls.builtins.formatting.beautysh,
+        null_ls.builtins.formatting.shfmt.with({
+          extra_args = {
+            '--case-indent',
+            '--indent=4',
+          },
+        }),
+        null_ls.builtins.hover.printenv,
+        null_ls.builtins.code_actions.gitsigns,
+        null_ls.builtins.diagnostics.dotenv_linter,
+        null_ls.builtins.diagnostics.checkmake,
+        null_ls.builtins.formatting.cmake_format,
       },
     })
 
