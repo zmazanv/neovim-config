@@ -39,6 +39,7 @@ return {
           'meson',
           'nasm',
           'nix',
+          'perl',
           'python',
           'rust',
           'sql',
