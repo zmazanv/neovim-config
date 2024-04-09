@@ -15,6 +15,7 @@ local servers = {
   marksman = {},
   nil_ls = {},
   pyright = {},
+  perlnavigator = {},
   rust_analyzer = {},
   tsserver = {},
   yamlls = {},
