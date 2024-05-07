@@ -35,6 +35,7 @@ return {
           'javascript',
           'lua',
           'make',
+          'markdown',
           'markdown_inline',
           'meson',
           'nasm',
