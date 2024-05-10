@@ -19,6 +19,7 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   yamlls = {},
+  zls = {},
 }
 
 return {
