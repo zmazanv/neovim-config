@@ -32,3 +32,5 @@ vim.opt.timeoutlen = 300
 vim.opt.completeopt = 'menuone,noselect'
 -- Enable 24-bit RGB color.
 vim.opt.termguicolors = true
+
+vim.opt.foldlevel = 20
