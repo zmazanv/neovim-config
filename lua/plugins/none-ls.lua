@@ -17,7 +17,11 @@ return {
             '--quote-style=AutoPreferSingle',
           },
         }),
-        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettier.with({
+          extra_args = {
+            '--prose-wrap=always'
+          },
+        }),
         null_ls.builtins.code_actions.statix,
         null_ls.builtins.diagnostics.todo_comments,
         null_ls.builtins.diagnostics.deadnix,
@@ -29,7 +33,7 @@ return {
         null_ls.builtins.formatting.shfmt.with({
           extra_args = {
             '--case-indent',
-            '--indent=4',
+            '--indent=8',
           },
         }),
         -- null_ls.builtins.hover.printenv,
