@@ -30,12 +30,7 @@ return {
         -- null_ls.builtins.formatting.nixfmt,
         -- null_ls.builtins.formatting.nixpkgs_fmt,
         -- null_ls.builtins.formatting.beautysh,
-        null_ls.builtins.formatting.shfmt.with({
-          extra_args = {
-            '--case-indent',
-            '--indent=8',
-          },
-        }),
+        null_ls.builtins.formatting.shfmt,
         -- null_ls.builtins.hover.printenv,
         null_ls.builtins.code_actions.gitsigns,
         null_ls.builtins.diagnostics.dotenv_linter,
