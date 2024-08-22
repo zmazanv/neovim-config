@@ -12,6 +12,7 @@ local servers = {
   jdtls = {},
   jsonls = {},
   lua_ls = {},
+  lemminx = {},
   marksman = {},
   nil_ls = {},
   pyright = {},
