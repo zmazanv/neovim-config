@@ -18,7 +18,7 @@ local servers = {
   pyright = {},
   perlnavigator = {},
   rust_analyzer = {},
-  tsserver = {},
+  ts_ls = {},
   yamlls = {},
   zls = {},
 }
