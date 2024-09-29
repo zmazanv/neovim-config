@@ -105,7 +105,9 @@ return {
         end, { desc = 'Format current buffer with kSP' })
       end
 
-      mason.setup()
+      mason.setup({
+        PATH = 'append',
+      })
       mason_lspconfig.setup()
       neodev.setup()
 
